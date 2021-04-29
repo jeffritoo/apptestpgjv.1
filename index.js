@@ -99,22 +99,22 @@ app.post("/create", (req, res) => {
   });
 });
 
-// GET /delete/5
-app.get("/delete/:id", (req, res) => {
-  const id = req.params.id;
-  const sql = "SELECT * FROM Books WHERE Book_ID = $1";
-  pool.query(sql, [id], (err, result) => {
-    // if (err) ...
-    res.render("delete", { model: result.rows[0] });
-  });
-});
+// // GET /delete/5
+// app.get("/delete/:id", (req, res) => {
+//   const id = req.params.id;
+//   const sql = "SELECT * FROM Books WHERE Book_ID = $1";
+//   pool.query(sql, [id], (err, result) => {
+//     // if (err) ...
+//     res.render("delete", { model: result.rows[0] });
+//   });
+// });
 
-// POST /delete/5
-app.post("/delete/:id", (req, res) => {
-  const id = req.params.id;
-  const sql = "DELETE FROM Books WHERE Book_ID = $1";
-  pool.query(sql, [id], (err, result) => {
-    // if (err) ...
-    res.redirect("/books");
-  });
-});
+// // POST /delete/5
+// app.post("/delete/:id", (req, res) => {
+//   const id = req.params.id;
+//   const sql = "DELETE FROM Books WHERE Book_ID = $1";
+//   pool.query(sql, [id], (err, result) => {
+//     // if (err) ...
+//     res.redirect("/books");
+//   });
+// });
